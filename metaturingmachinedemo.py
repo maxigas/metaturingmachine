@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+
 # Import some metaprogramming libraries and random.
 import ast, astpretty, dis, inspect, random
-
-import random
 
 def turingmachine():
     tape=random.choices(population=(True,False), k=8)
@@ -15,9 +14,8 @@ def turingmachine():
         if tape:
             print(not tape[0], end="|", flush=False)
             head(tape[1:])
+
     head(tape)
-
-
 
 # 0. Print source code of function.
 print(inspect.getsource(turingmachine))
