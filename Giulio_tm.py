@@ -26,7 +26,7 @@ def reverter3(i,o=""):
             o += "1"
         elif i[0] is "1":
             o += "0"
-        return reverter2(i[1:], o)
+        return reverter3(i[1:], o)
 
 def reverter4(i,o=""):
     '''Recursive reverter with ternary assignment'''
@@ -34,6 +34,6 @@ def reverter4(i,o=""):
         return o
     else:
         o += "0" if i[0] is "1" else "1" if i[0] is "0" else ""
-        return reverter3(i[1:], o)
+        return reverter4(i[1:], o)
   
 print(reverter(input("Enter a String of 0 and 1 and it will be reverted! Everything else will be skipped: ")))
