@@ -933,7 +933,7 @@ class GroupsServerHandler(GroupsServerWorkerHandler):
         admins = []
         
         for u in users:
-            # Maxias: the next two lines are unnecessary anyway...
+            # Maxigas: the next two lines are unnecessary anyway...
             if u["user_id"] == requester_user_id:
                 continue
             # Maxigas: ...because we also check for requester_user_id here
