@@ -915,7 +915,7 @@ class GroupsServerHandler(GroupsServerWorkerHandler):
 
         # Maxigas: Refactor to functional paradigm
         non_admins = (u["user_id"] for u in users if not u["is_admin"])
-        admins =  = (u["user_id"] for u in users if u["is_admin"] and not u["user_id"] == requester_user_id )
+        admins =  = (u["user_id"] for u in users if u["is_admin"] and not u["user_id"] == requester_user_id)
 
         # Maxigas: Refactor to even more functional style
         non_admins = set(map(lambda u: u["user_id"] if not u["is_admin"], users))
@@ -923,7 +923,7 @@ class GroupsServerHandler(GroupsServerWorkerHandler):
 
         # Maxigas: Refactor using the map/filter/reduce pattern
         # Map an anonymous (lambda) function to a list:
-        non_admins = map(lambda u: u["user_id"] if not u["is_admin"], users)
+        non_admins = set(map(lambda u: u["user_id"] if not u["is_admin"], users))
         admins = set(map(lambda u: u["user_id"] if u["is_admin"]), users)
         # Filter the list using an anonymous (lambda) function:
         admins = set(filter(lambda u: not u["user_id"] == requester_user_id, admins))
